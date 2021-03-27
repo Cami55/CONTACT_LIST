@@ -1,0 +1,20 @@
+<div class="container col-6">
+  <div class="employees">
+    <div class="employee-cards">
+      <div class="text-right space-btn">
+      <%= link_to 'New Employee', new_employee_path, class: "btn btn-primary" %>
+      </div>
+      <% @employees.each do |employee| %>
+      <div class="card">
+        <%= link_to employee_path(employee), style: "width: 100%", class: "card-link" do %>
+        <div class="employee-infos">
+          <h2><%= employee.forename%> <%= employee.surname %></h2>
+        </div>
+          <p class="employee-infos">Department: <%= employee.department %></p>
+        <% end  %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
