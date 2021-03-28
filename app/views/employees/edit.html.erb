@@ -4,11 +4,11 @@
     <h2> Edit Employee </h2>
     <br>
     <div class="form-inputs">
-      <%= f.input :forename %>
-      <%= f.input :surname %>
-      <%= f.input :address %>
-      <%= f.input :email %>
-      <%= f.input :department%>
+      <%= f.input :forename, placeholder: "John"  %>
+      <%= f.input :surname, placeholder: "Doe"  %>
+      <%= f.input :address, placeholder: "Paris"  %>
+      <%= f.input :email, placeholder: "john@doe.com"  %>
+      <%= f.input :department, placeholder: "Bar" %>
       <%= f.input :manager_id, collection: User.where(manager: true), label_method: :fullname %>
     </div>
     <br>
@@ -20,3 +20,5 @@
     <% end %>
   </div>
 </div>
+<br>
+<br>
