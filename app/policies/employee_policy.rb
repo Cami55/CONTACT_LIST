@@ -10,11 +10,11 @@
     end
 
     def create?
-      @user
+      @user.admin?
     end
 
     def update?
-      user.admin
+      user.admin?
     end
 
     def destroy?

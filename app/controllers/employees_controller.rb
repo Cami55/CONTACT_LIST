@@ -1,7 +1,7 @@
 class EmployeesController < ApplicationController
   skip_before_action only: %i[index show create new]
   def index
-    @employees = Employee.all
+    @employees = Employee.all.order(created_at: :desc)
   end
 
   def show

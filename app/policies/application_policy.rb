@@ -23,7 +23,7 @@ attr_reader :user, :record
   end
 
   def update?
-    false
+    user.admin?
   end
 
   def edit?
