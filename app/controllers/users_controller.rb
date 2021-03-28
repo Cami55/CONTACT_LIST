@@ -33,6 +33,10 @@ class UsersController < ApplicationController
 
   private
 
+  def user_params
+    params.require(:user).permit(:manager, :admin)
+  end
+
   def update_params
     params.require(:user).permit(:password)
   end

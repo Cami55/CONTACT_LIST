@@ -9,6 +9,7 @@
       <%= f.input :address %>
       <%= f.input :email %>
       <%= f.input :department%>
+      <%= f.input :manager_id, collection: User.where(manager: true), label_method: :fullname %>
     </div>
     <br>
 

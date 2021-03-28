@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  skip_before_action only: %i[index show create new edit update]
+  skip_before_action only: %i[index show create new]
   def index
     @employees = Employee.all
   end
@@ -10,6 +10,7 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
+    @managers = User.all.where(manager: true)
   end
 
   def create
@@ -21,7 +22,7 @@ class EmployeesController < ApplicationController
     end
   end
 
-   def edit
+  def edit
     @employee = Employee.find(params[:id])
   end
 
@@ -40,6 +41,6 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    params.require(:employee).permit(:forename, :surname, :address, :email, :department)
+    params.require(:employee).permit(:forename, :surname, :address, :email, :manager_id, :department)
   end
 end
